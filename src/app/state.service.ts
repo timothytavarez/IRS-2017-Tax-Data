@@ -13,5 +13,5 @@ export class StateService {
   getStates() {
     return this.states = this.stateData.readStates();
   }
-  
+
 }

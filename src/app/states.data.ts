@@ -1,4 +1,3 @@
-import { State } from './state';
 
 export class StateData {
 

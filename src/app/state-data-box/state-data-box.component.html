@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let state of states">
+      <tr *ngFor="let state of states$ | async">
         <td>{{ state.name }}</td>
         <td>{{ state.totalIRSCollections | currency }}</td>
         <td>{{ state.businessIncome | currency }}</td>

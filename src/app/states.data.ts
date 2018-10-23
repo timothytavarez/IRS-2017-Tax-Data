@@ -17,7 +17,7 @@ export class StateData {
             individualIncomeTaxWithheldFICA: 288364748,
             individualIncomeTaxPaymentsSECA: 90271160
         }
-    ]
+    ];
 
     readStates() {
         return this.states;

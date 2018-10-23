@@ -1,11 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { StateDataBoxComponent } from './state-data-box/state-data-box.component';
+import { StateData } from './states.data';
+import { StateService } from './state.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        StateDataBoxComponent,
+        StateData,
+        StateService
       ],
     }).compileComponents();
   }));
@@ -16,16 +22,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tax-revenue'`, () => {
+  it(`should have as title 'TaxRevenue'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('tax-revenue');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to tax-revenue!');
+    expect(app.title).toEqual('TaxRevenue');
   });
 });

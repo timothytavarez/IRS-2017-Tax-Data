@@ -9,11 +9,16 @@ import { StateService } from '../state.service';
 })
 export class StateDataBoxComponent implements OnInit {
 
-  public states: State[] = [];
+  public states = [];
+
   constructor(public stateService: StateService) { }
 
   ngOnInit() {
-    return this.states = this.stateService.getStates();
+    this.stateService.getStatesObservable()
+      .subscribe(state => {
+        this.states.push(state);
+        console.log(this.states);
+      });
   }
 
 }

@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { StateDataBoxComponent } from './state-data-box/state-data-box.component';
-import { StateData } from './states.data';
 import { StateService } from './state.service';
 
 describe('AppComponent', () => {
@@ -10,7 +9,6 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         StateDataBoxComponent,
-        StateData,
         StateService
       ],
     }).compileComponents();

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '../state';
 import { StateService } from '../state.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-state-data-box',
@@ -9,16 +10,25 @@ import { StateService } from '../state.service';
 })
 export class StateDataBoxComponent implements OnInit {
 
-  public states = [];
+  private states: State[] = [];
 
   constructor(public stateService: StateService) { }
 
   ngOnInit() {
     this.stateService.getStatesObservable()
-      .subscribe(state => {
-        this.states.push(state);
-        console.log(this.states);
-      });
+      .subscribe(
+        state => {
+          state.forEach(arrayItem => {
+            this.states.push(arrayItem);
+          });
+        },
+        error => {
+          console.log(error);
+        },
+        () => {
+          console.log(this.states);
+        }
+      );
   }
 
 }
